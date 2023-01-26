@@ -130,7 +130,7 @@ app.component('productModal', {
       },
     },
   })
-// // 產品刪除元件
+//  產品刪除元件
 // app.component('delProductModal', {
 //     template: '#delProductModal',
 //     props: ['item'],
