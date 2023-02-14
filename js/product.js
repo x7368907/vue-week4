@@ -130,37 +130,37 @@ app.component('productModal', {
       },
     },
   })
-//  產品刪除元件
-// app.component('delProductModal', {
-//     template: '#delProductModal',
-//     props: ['item'],
-//     data() {
-//       return {
-//         apiUrl: 'https://vue3-course-api.hexschool.io/v2',
-//         apiPath: 'lee-ren',
-//       };
-//     },
-//     mounted() {
-//         delProductModal = new bootstrap.Modal('#delProductModal');
-//     },
-//     methods: {
-//         delProduct(){
-//             const webSite = `${this.apiUrl}/api/${this.apiPath}/admin/product/${this.item.id}`;
-//                 axios.delete(webSite)
-//                 .then((res) => {
-//                     this.hideModal();
-//                     this.$emit('update');
+ //產品刪除元件
+app.component('delProductModal', {
+    template: '#delProductModal',
+    props: ['item'],
+    data() {
+      return {
+        apiUrl: 'https://vue3-course-api.hexschool.io/v2',
+        apiPath: 'lee-ren',
+      };
+    },
+    mounted() {
+        delProductModal = new bootstrap.Modal('#delProductModal');
+    },
+    methods: {
+        delProduct(){
+            const webSite = `${this.apiUrl}/api/${this.apiPath}/admin/product/${this.item.id}`;
+                axios.delete(webSite)
+                .then((res) => {
+                    this.hideModal();
+                    this.$emit('update');
                     
-//                   })
-//                 .catch((err) => {
-//                   })
-//             },
-//       openModal() {
-//         delProductModal.show();
-//       },
-//       hideModal() {
-//         delProductModal.hide();
-//       },
-//     },
-//   });
+                  })
+                .catch((err) => {
+                  })
+            },
+      openModal() {
+        delProductModal.show();
+      },
+      hideModal() {
+        delProductModal.hide();
+      },
+    },
+  });
 app.mount('#app')
